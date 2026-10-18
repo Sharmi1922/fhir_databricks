@@ -1,10 +1,4 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # 03 – Silver to Gold Aggregation
-# MAGIC
-# MAGIC Creates gold-layer summary tables from silver for analytics and dashboards.
-
-# Databricks notebook source
 from fhir_lakehouse.config import load_config
 from fhir_lakehouse.analytics.gold import GoldAggregator
 from fhir_lakehouse.logging_utils import get_logger

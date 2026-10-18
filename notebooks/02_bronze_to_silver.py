@@ -1,11 +1,4 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # 02 – Bronze to Silver Transformation
-# MAGIC
-# MAGIC Reads bronze tables, applies quality checks, deduplication, and SCD2 tracking.
-# MAGIC This notebook is a skeleton – fill in the write logic before running.
-
-# Databricks notebook source
 from fhir_lakehouse.config import load_config
 from fhir_lakehouse.transformations.quality import check_required_fields
 from fhir_lakehouse.transformations.scd2 import compute_hash

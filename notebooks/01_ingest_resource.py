@@ -1,10 +1,4 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # 01 – Ingest FHIR Resource (Raw → Bronze)
-# MAGIC
-# MAGIC Fetches FHIR resources from the API and writes them to the raw and bronze layers.
-
-# Databricks notebook source
 import json
 from datetime import datetime, timezone
 from pathlib import Path

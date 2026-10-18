@@ -1,10 +1,4 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # 00 – Setup: Catalogs, Schemas, and Volumes
-# MAGIC
-# MAGIC This notebook creates the Unity Catalog infrastructure needed by the FHIR Lakehouse.
-
-# Databricks notebook source
 CATALOG = "fhir_catalog_dev"
 SCHEMA = "fhir_schema_dev"
 

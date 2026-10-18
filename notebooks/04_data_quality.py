@@ -1,10 +1,4 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # 04 – Data Quality Checks
-# MAGIC
-# MAGIC Runs data quality checks on silver tables and reports violations.
-
-# Databricks notebook source
 from fhir_lakehouse.config import load_config, load_resource_config
 from fhir_lakehouse.transformations.quality import check_quality
 from fhir_lakehouse.logging_utils import get_logger
