@@ -1,0 +1,32 @@
+bundle:
+  name: fhir-databricks
+
+variables:
+  catalog:
+    description: Unity Catalog catalog name
+    default: fhir_catalog
+  schema:
+    description: Schema name for FHIR data
+    default: fhir_schema
+
+targets:
+  dev:
+    mode: development
+    default: true
+    variables:
+      catalog: fhir_catalog_dev
+      schema: fhir_schema_dev
+
+  prod:
+    mode: production
+    variables:
+      catalog: fhir_catalog
+      schema: fhir_schema
+
+artifacts:
+  fhir_lakehouse:
+    path: ../
+    build: .
+
+include:
+  - resources/fhir_job.yml

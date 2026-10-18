@@ -1,0 +1,54 @@
+# FHIR resource type configuration
+# Maps resource types to their ingestion and transformation settings
+
+resources:
+  Patient:
+    key_columns: ["id"]
+    partition_by: ["gender"]
+    expected_fields:
+      - "id"
+      - "name"
+      - "gender"
+      - "birthDate"
+      - "active"
+
+  Observation:
+    key_columns: ["id"]
+    partition_by: ["status"]
+    expected_fields:
+      - "id"
+      - "status"
+      - "code"
+      - "subject"
+      - "effectiveDateTime"
+      - "valueQuantity"
+
+  Encounter:
+    key_columns: ["id"]
+    partition_by: ["status"]
+    expected_fields:
+      - "id"
+      - "status"
+      - "class"
+      - "subject"
+      - "period"
+
+  Condition:
+    key_columns: ["id"]
+    partition_by: ["clinicalStatus"]
+    expected_fields:
+      - "id"
+      - "clinicalStatus"
+      - "code"
+      - "subject"
+      - "onsetDateTime"
+
+  MedicationRequest:
+    key_columns: ["id"]
+    partition_by: ["status"]
+    expected_fields:
+      - "id"
+      - "status"
+      - "medicationReference"
+      - "subject"
+      - "authoredOn"

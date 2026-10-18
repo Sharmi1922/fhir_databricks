@@ -1,0 +1,29 @@
+# Development environment configuration for FHIR Lakehouse
+
+environment: dev
+
+catalog: fhir_catalog_dev
+schema: fhir_schema_dev
+
+# FHIR API settings
+fhir_api:
+  base_url: "https://hapi.fhir.org/baseR4"
+  auth_token: ""
+  page_size: 100
+  rate_limit_per_second: 10
+  timeout_seconds: 30
+  retry_max: 3
+
+# Storage paths
+storage:
+  raw_volume: "/Volumes/fhir_catalog_dev/fhir_schema_dev/raw"
+  bronze_volume: "/Volumes/fhir_catalog_dev/fhir_schema_dev/bronze"
+  checkpoint_location: "/Volumes/fhir_catalog_dev/fhir_schema_dev/checkpoints"
+
+# SCD2 settings
+scd2:
+  effective_from_col: "__START_AT"
+  effective_to_col: "__END_AT"
+  key_columns:
+    - "resource_id"
+  sequence_by: "last_updated"
